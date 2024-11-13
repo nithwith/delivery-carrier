@@ -1,0 +1,46 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* website_sale_picking_booking
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0-20240312\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-11-13 13:04+0000\n"
+"PO-Revision-Date: 2024-11-13 13:04+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: website_sale_picking_booking
+#: model:ir.model.fields,field_description:website_sale_picking_booking.field_delivery_carrier__resource_calendar_id
+msgid "Availability"
+msgstr "Disponibilité"
+
+#. module: website_sale_picking_booking
+#: model_terms:ir.ui.view,arch_db:website_sale_picking_booking.view_delivery_carrier_form_with_onsite_picking
+msgid "Booking disponnibility"
+msgstr "Disponnibilité du point de collecte"
+
+#. module: website_sale_picking_booking
+#: model:ir.model.fields,field_description:website_sale_picking_booking.field_delivery_carrier__next_days
+msgid "Days available for picking the order"
+msgstr "Délais de récupération du colis"
+
+#. module: website_sale_picking_booking
+#: model:ir.model.fields,field_description:website_sale_picking_booking.field_delivery_carrier__slot_duration
+msgid "Duration of picking slot"
+msgstr "Durée d'un créneau de livraison"
+
+#. module: website_sale_picking_booking
+#: model_terms:ir.ui.view,arch_db:website_sale_picking_booking.checkout_delivery
+msgid "Select a slot"
+msgstr "Seletionner un créneau"
+
+#. module: website_sale_picking_booking
+#: model:ir.model,name:website_sale_picking_booking.model_delivery_carrier
+msgid "Shipping Methods"
+msgstr "Modes d'expédition"

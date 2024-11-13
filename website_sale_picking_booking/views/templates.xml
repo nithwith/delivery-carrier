@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template id="checkout_delivery" inherit_id="website_sale.payment_delivery_methods">
+        <xpath expr="//div[hasclass('small')]" position="after">
+            <t t-if="delivery.resource_calendar_id">
+                <t t-set="available_slots_for_carrier" t-value="available_slots[delivery.id]"/>
+                <label class="col-form-label">Select a slot</label>
+                <select class="form-select o_delivery_date_select" required="1" >
+                    <option value="" selected="true"></option>
+                    <t t-foreach="available_slots_for_carrier" t-as="day">
+                        <option t-att-disabled="true"><b t-esc="day"/></option>
+                        <t t-foreach="available_slots_for_carrier[day]" t-as="slot" >
+                            <option t-att-value="slot" t-att-href="'/update_shipping_slot/%s' % slot">
+                                <t t-esc="slot"/>
+                            </option>
+                        </t>
+                    </t>
+                </select>
+            
+            </t>
+        </xpath>
+    </template>
+
+    <template id="payment_method_form" inherit_id="payment.method_form">
+        <xpath expr="//input[@name='o_payment_radio']" position="attributes">
+            <attribute name="t-att-data-is-onsite">1 if provider_sudo.custom_mode == 'onsite' else 0</attribute>
+        </xpath>
+    </template>
+
+
+</odoo>
