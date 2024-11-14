@@ -6,8 +6,7 @@
             <t t-if="delivery.resource_calendar_id">
                 <t t-set="available_slots_for_carrier" t-value="available_slots[delivery.id]"/>
                 <label class="col-form-label">Select a slot</label>
-                <select class="form-select o_delivery_date_select" required="1" >
-                    <option value="" selected="true"></option>
+                <select class="form-select o_delivery_date_select">
                     <t t-foreach="available_slots_for_carrier" t-as="day">
                         <option t-att-disabled="true"><b t-esc="day"/></option>
                         <t t-foreach="available_slots_for_carrier[day]" t-as="slot" >

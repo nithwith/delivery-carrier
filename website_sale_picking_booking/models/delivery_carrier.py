@@ -18,7 +18,7 @@ class DeliveryCarrier(models.Model):
     _inherit = 'delivery.carrier'
 
     resource_calendar_id = fields.Many2one('resource.calendar', string='Availability')
-    next_days = fields.Integer('Days available for picking the order')
+    available_picking_delay = fields.Float('Hours available for picking the order')
     slot_duration = fields.Float('Duration of picking slot')
 
 
@@ -26,7 +26,7 @@ class DeliveryCarrier(models.Model):
         """Return available slots for scheduling collect."""
 
         start_dt = fields.Datetime.context_timestamp(self, fields.Datetime.now())
-        end_dt = fields.Datetime.context_timestamp(self, fields.Datetime.now()) + timedelta(days=self.next_days)
+        end_dt = fields.Datetime.context_timestamp(self, fields.Datetime.now()) + timedelta(hours=self.available_picking_delay)
 
         result = {}
         slot_duration = timedelta(hours=self.slot_duration)

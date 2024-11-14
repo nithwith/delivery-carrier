@@ -9,7 +9,7 @@
                 <page string="Booking disponnibility">
                     <group>
                         <field name="resource_calendar_id"/>
-                        <field name="next_days"/>
+                        <field name="available_picking_delay" widget="float_time"/>
                         <field name="slot_duration" widget="float_time"/>
                     </group>
                 </page>
